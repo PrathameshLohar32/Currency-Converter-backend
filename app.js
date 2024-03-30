@@ -13,6 +13,11 @@ const API_KEY = process.env.EXCHANGE_RATE_API_KEY;
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100,
+    validate: {
+		validationsConfig: false,
+		// ...
+		default: true,
+	},
 });
 
 // Trust the first hop (e.g., when your app is behind a proxy)
