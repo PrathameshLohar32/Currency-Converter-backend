@@ -15,6 +15,9 @@ const apiLimiter = rateLimit({
     max: 100,
 });
 
+// Trust the first hop (e.g., when your app is behind a proxy)
+app.set('trust proxy', 1);
+
 // Apply cors middleware
 app.use(cors());
 
